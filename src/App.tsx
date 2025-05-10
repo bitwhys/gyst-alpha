@@ -117,7 +117,7 @@ function Session({
 function WeekDays() {
   return (
     <>
-      <div className="grid grid-cols-7 gap-x-4">
+      <div className="grid grid-cols-7 gap-x-3">
         <div className="flex flex-col justify-center gap-y-2">
           <div className="text-base/6 font-semibold text-center">M</div>
           <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary">
