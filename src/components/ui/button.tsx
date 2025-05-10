@@ -50,11 +50,11 @@ const buttonVariants = tv({
         // border
         'border-transparent',
         // text color
-        'text-gray-900 dark:text-gray-50',
+        'text-cnt-primary',
         // background color
-        'bg-gray-200 dark:bg-gray-900',
+        'bg-secondary',
         // hover color
-        'hover:bg-gray-300/70 dark:hover:bg-gray-800/80',
+        'hover:bg-secondary-hover',
         // disabled
         'disabled:bg-gray-100 disabled:text-gray-400',
         'dark:disabled:bg-gray-800 dark:disabled:text-gray-600',
