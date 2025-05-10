@@ -28,7 +28,7 @@ const buttonVariants = tv({
         // hover color
         'hover:bg-accent-hover dark:hover:bg-accent-hover',
         // disabled
-        'disabled:bg-accent-soft disabled:text-white',
+        'disabled:bg-accent-soft disabled:text-accent-9',
         'dark:disabled:bg-accent-bold dark:disabled:text-white',
       ],
       secondary: [

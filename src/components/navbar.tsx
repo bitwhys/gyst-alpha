@@ -1,4 +1,4 @@
-import Tabs from '@/components/ui/tabs'
+import Tabs from '@/assets/tabs'
 import ThemeToggle from './theme-toggle'
 import { cx } from '@/lib/utils'
 

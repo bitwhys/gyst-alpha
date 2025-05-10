@@ -10,6 +10,9 @@
   :root {
     --font-inter: 'Inter Variable', sans-serif;
   }
+  body {
+    @apply bg-page;
+  }
 }
 
 @theme inline {
