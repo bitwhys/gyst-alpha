@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react'
+import '@fontsource-variable/inter'
 import { withTheme } from './decorators'
 
 import '@/assets/globals.css'

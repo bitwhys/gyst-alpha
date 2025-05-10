@@ -52,10 +52,9 @@ function App() {
                 <Button
                   type="button"
                   // variant="secondary"
-                  className="h-7 gap-x-2 rounded-lg"
                 >
-                  <Timer size={16} weight="bold" />
-                  Track time
+                  <Timer data-slot="icon" weight="bold" />
+                  <span data-slot="label">Track time</span>
                 </Button>
               </div>
             </div>

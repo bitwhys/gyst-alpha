@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { cx } from "@/lib/utils"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { cx } from '@/lib/utils'
+import { Button, buttonVariants } from '@/components/ui/button'
 
 const meta: Meta<typeof Button> = {
-  title: "ui/Button",
+  title: 'ui/Button',
   component: Button,
   argTypes: {
     variant: {
-      control: "radio",
+      control: 'radio',
       options: [...Object.keys(buttonVariants.variants.variant)],
     },
   },
@@ -19,42 +19,42 @@ type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
   args: {
-    variant: "primary",
-    children: "Primary",
+    variant: 'primary',
+    children: 'Primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary",
-    children: "Secondary",
+    variant: 'secondary',
+    children: 'Secondary',
   },
 }
 
 export const Light: Story = {
   args: {
-    variant: "light",
-    children: "Light",
+    variant: 'light',
+    children: 'Light',
   },
 }
 
 export const Ghost: Story = {
   args: {
-    variant: "ghost",
-    children: "Ghost",
+    variant: 'ghost',
+    children: 'Ghost',
   },
 }
 
 export const Destructive: Story = {
   args: {
-    variant: "destructive",
-    children: "Destructive",
+    variant: 'destructive',
+    children: 'Destructive',
   },
 }
 
 export const WithDisabled: Story = {
   args: {
-    children: "Disabled",
+    children: 'Disabled',
     disabled: true,
   },
 }
@@ -68,13 +68,13 @@ export const IsLoading: Story = {
 export const IsLoadingWithChildren: Story = {
   args: {
     isLoading: true,
-    children: "Add item",
+    children: 'Add item',
   },
 }
 
 export const IsLoadingWithLoadingText: Story = {
   args: {
-    loadingText: "Custom loading text",
+    loadingText: 'Custom loading text',
     isLoading: true,
   },
 }
@@ -90,7 +90,7 @@ export const AsChildAnchor: Story = {
 export const AnchorWithBadgeVariantsStyle: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <a className={cx(buttonVariants({ variant: "secondary" }))}>
+      <a className={cx(buttonVariants({ variant: 'secondary' }))}>
         Anchor element
       </a>
     </div>
