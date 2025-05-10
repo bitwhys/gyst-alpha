@@ -7,7 +7,12 @@ import { Checkbox } from './components/ui/checkbox'
 import { cx } from './lib/utils'
 import { EmptyState } from './components/emty-state'
 
-const items = [
+interface Item {
+  id: number
+  size: 'sm' | 'md' | 'lg'
+}
+
+const items: Item[] = [
   // { id: 1, size: 'sm' as const },
   // { id: 2, size: 'md' as const },
   // { id: 3, size: 'lg' as const },
