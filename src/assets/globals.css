@@ -1,15 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/forms";
+
+@import './css/tokens/index.css';
+@import './css/radix-ui-theme.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
-    --font-jakarta: "Plus Jakarta Sans Variable", sans-serif;
+    --font-inter: 'Inter Variable', sans-serif;
   }
 }
-@theme {
-  --font-sans: var(--font-jakarta);
+
+@theme inline {
+  --font-sans: var(--font-inter);
   --animate-hide: hide 150ms cubic-bezier(0.16, 1, 0.3, 1);
   --animate-slide-down-and-fade: slideDownAndFade 150ms
     cubic-bezier(0.16, 1, 0.3, 1);
@@ -131,4 +135,71 @@
       transform: translateX(100%);
     }
   }
+}
+
+@theme inline {
+  /** Base Tokens **/
+  /* Contents */
+  --color-cnt-primary: var(--cnt-primary);
+  --color-cnt-secondary: var(--cnt-secondary);
+  --color-cnt-tertiary: var(--cnt-tertiary);
+  --color-cnt-on-primary: var(--cnt-on-primary);
+
+  --color-cnt-accent: var(--cnt-accent);
+  --color-cnt-info: var(--cnt-info);
+  --color-cnt-success: var(--cnt-success);
+  --color-cnt-warning: var(--cnt-warning);
+  --color-cnt-danger: var(--cnt-danger);
+
+  /* Backgrounds */
+  --color-main: var(--bg-main);
+  --color-primary: var(--bg-primary);
+  --color-secondary: var(--bg-secondary);
+  --color-tertiary: var(--bg-tertiary);
+
+  --color-accent-soft: var(--bg-accent-soft);
+  --color-info-soft: var(--bg-info-soft);
+  --color-success-soft: var(--bg-success-soft);
+  --color-warning-soft: var(--bg-warning-soft);
+  --color-danger-soft: var(--bg-danger-soft);
+  --color-danger-soft: var(--bg-danger-soft);
+
+  --color-accent-bold: var(--bg-accent-bold);
+  --color-info-bold: var(--bg-info-bold);
+  --color-success-bold: var(--bg-success-bold);
+  --color-warning-bold: var(--bg-warning-bold);
+  --color-danger-bold: var(--bg-danger-bold);
+
+  /* Borders */
+  --color-brd-main: var(--brd-main);
+  --color-brd-alternative: var(--brd-alternative);
+
+  --color-brd-accent: var(--brd-accent);
+  --color-brd-info: var(--brd-info);
+  --color-brd-success: var(--brd-success);
+  --color-brd-warning: var(--brd-warning);
+  --color-brd-danger: var(--brd-danger);
+
+  /* Page Backgrounds */
+  --color-page: var(--page-main);
+  --color-page-secondary: var(--page-secondary);
+  --color-page-tertiary: var(--page-tertiary);
+
+  /* -———————————————————————————————————————————- */
+
+  /** State Tokens **/
+  /* Contents */
+  --color-cnt-accent-hover: var(--cnt-accent-hover);
+  --color-cnt-accent-active: var(--cnt-accent-active);
+  --color-cnt-info-hover: var(--cnt-info-hover);
+  --color-cnt-info-active: var(--cnt-info-active);
+  --color-cnt-success-hover: var(--cnt-success-hover);
+
+  /* Backgrounds */
+  --color-main-hover: var(--bg-main-hover);
+  --color-main-active: var(--bg-main-active);
+  --color-secondary-hover: var(--bg-secondary-hover);
+  --color-secondary-active: var(--bg-secondary-active);
+  --color-tertiary-hover: var(--bg-tertiary-hover);
+  --color-tertiary-active: var(--bg-tertiary-active);
 }

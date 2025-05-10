@@ -1,49 +1,41 @@
+import Tabs from '@/components/ui/tabs'
+import ThemeToggle from './theme-toggle'
+
 export const Navbar = () => {
   return (
     <>
       <header className="fixed top-2 z-30 w-full md:top-6">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+        <div className="mx-auto max-w-2xl">
+          <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg [--tw-shadow-color:var(--color-black-a1)] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-a3),var(--color-black-a3))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+            {/* Brand */}
             <div className="flex flex-1 items-center">
               <a className="inline-flex" aria-label="Cruip" href="/">
                 <svg
-                  className='size-8'
-                                    viewBox="0 0 70 40"
+                  className="size-8 text-accent-bold"
+                  viewBox="0 0 70 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="M37.2551 1.61586C38.1803 0.653384 39.4368 0.112671 40.7452 0.112671C46.6318 0.112671 52.1793 0.112674 57.6424 0.112685C68.6302 0.112708 74.1324 13.9329 66.3629 22.0156L49.4389 39.6217C48.662 40.43 47.3335 39.8575 47.3335 38.7144V23.2076L49.2893 21.1729C50.8432 19.5564 49.7427 16.7923 47.5451 16.7923H22.6667L37.2551 1.61586Z"
-                    fill="#3A04FF"
+                    fill="currentColor"
                   ></path>
                   <path
                     d="M32.7449 38.3842C31.8198 39.3467 30.5633 39.8874 29.2549 39.8874C23.3683 39.8874 17.8208 39.8874 12.3577 39.8874C1.36983 39.8873 -4.13236 26.0672 3.63721 17.9844L20.5612 0.378369C21.3381 -0.429908 22.6666 0.142547 22.6666 1.28562L22.6667 16.7923L20.7108 18.8271C19.1569 20.4437 20.2574 23.2077 22.455 23.2077L47.3335 23.2076L32.7449 38.3842Z"
-                    fill="#3A04FF"
+                    fill="currentColor"
                   ></path>
-                </svg>{" "}
+                </svg>{' '}
               </a>
             </div>
-            <ul className="flex flex-1 items-center justify-end gap-3">
-              <li>
-                <a
-                  className="h-7 rounded-lg text-sm/6 px-3 py-2 bg-white text-gray-800 shadow-sm hover:bg-gray-50"
-                  href="/signin"
-                >
-                  Login
-                </a>
-              </li>
-              <li>
-                <a
-                  className="h-7 rounded-lg text-sm/6  font-medium px-3 py-2 bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
-                  href="/signup"
-                >
-                  Register
-                </a>
-              </li>
-            </ul>
+
+            <Tabs />
+            {/* Actions */}
+            <div className="flex flex-1 items-center justify-end gap-3">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
     </>
-  );
-};
+  )
+}

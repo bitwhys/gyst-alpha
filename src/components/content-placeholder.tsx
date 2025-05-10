@@ -1,17 +1,14 @@
-import { cx } from "@/lib/utils";
+import { cx } from '@/lib/utils'
 
 export function ContentPlaceholder({ className }: { className: string }) {
   return (
     <div
       className={cx(
-        "relative h-full overflow-hidden rounded bg-gray-50 dark:bg-dark-tremor-background-subtle",
-        className,
+        'relative h-full overflow-hidden rounded bg-gray-2 dark:bg-gray-3',
+        className
       )}
     >
-      <svg
-        className="absolute inset-0 h-full w-full stroke-gray-200 dark:stroke-gray-700"
-        fill="none"
-      >
+      <svg className="absolute inset-0 h-full w-full stroke-gray-6" fill="none">
         <defs>
           <pattern
             id="pattern-1"
@@ -32,5 +29,5 @@ export function ContentPlaceholder({ className }: { className: string }) {
         ></rect>
       </svg>
     </div>
-  );
+  )
 }
