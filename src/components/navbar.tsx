@@ -1,16 +1,30 @@
 import Tabs from '@/components/ui/tabs'
 import ThemeToggle from './theme-toggle'
+import { cx } from '@/lib/utils'
 
 export const Navbar = () => {
+  const headerStyles = cx(
+    'relative flex h-14 items-center justify-between gap-3 rounded-2xl',
+    'px-3  [--tw-shadow-color:var(--color-black-a1)]',
+    // TODO: add shadow on scroll after some offset
+    // 'shadow-lg',
+    // colos
+    'bg-white-a11 dark:bg-gray-3',
+    // backdrop
+    'backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0',
+    'before:rounded-[inherit] before:border before:border-transparent',
+    'before:[background:linear-gradient(var(--color-gray-a3),var(--color-black-a3))_border-box]',
+    'before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]'
+  )
   return (
     <>
       <header className="fixed top-2 z-30 w-full md:top-6">
         <div className="mx-auto max-w-2xl">
-          <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg [--tw-shadow-color:var(--color-black-a1)] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-a3),var(--color-black-a3))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+          <div className={headerStyles}>
             {/* Brand */}
             <div className="flex flex-1 items-center">
               <a className="inline-flex" aria-label="Cruip" href="/">
-                <svg
+                {/* <svg
                   className="size-8 text-accent-bold"
                   viewBox="0 0 70 40"
                   fill="none"
@@ -24,7 +38,8 @@ export const Navbar = () => {
                     d="M32.7449 38.3842C31.8198 39.3467 30.5633 39.8874 29.2549 39.8874C23.3683 39.8874 17.8208 39.8874 12.3577 39.8874C1.36983 39.8873 -4.13236 26.0672 3.63721 17.9844L20.5612 0.378369C21.3381 -0.429908 22.6666 0.142547 22.6666 1.28562L22.6667 16.7923L20.7108 18.8271C19.1569 20.4437 20.2574 23.2077 22.455 23.2077L47.3335 23.2076L32.7449 38.3842Z"
                     fill="currentColor"
                   ></path>
-                </svg>{' '}
+                </svg>{' '} */}
+                <Logo />
               </a>
             </div>
 
@@ -37,5 +52,23 @@ export const Navbar = () => {
         </div>
       </header>
     </>
+  )
+}
+
+function Logo() {
+  return (
+    <svg
+      className="size-8 text-accent-bold"
+      viewBox="0 0 128 128"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M64 118.835C69.984 118.835 75.7408 117.878 81.1296 116.109C75.632 115.181 69.8432 113.318 64.0032 110.573C58.1632 113.318 52.3712 115.184 46.8736 116.109C52.2624 117.878 58.0192 118.835 64 118.835ZM11.8944 81.1392C12.8224 75.6416 14.6848 69.8432 17.4304 64.0032C14.6848 58.16 12.8192 52.368 11.8944 46.8672C10.0803 52.3969 9.15888 58.1803 9.1648 64C9.1648 69.984 10.1248 75.744 11.8944 81.1392ZM23.4272 74.7072C22.9152 76.2048 22.48 77.6832 22.1152 79.1296C19.2768 90.4928 21.36 98.2912 25.5392 102.467C29.7152 106.646 37.5136 108.73 48.8768 105.888C50.3232 105.526 51.8016 105.088 53.2992 104.576C47.3696 100.679 41.8577 96.1802 36.8512 91.152C31.8231 86.1464 27.3246 80.6357 23.4272 74.7072ZM64.0032 99.8112C57.1456 96.0576 50.1664 90.896 43.6352 84.3648C37.1072 77.8368 31.9456 70.8608 28.1952 64.0032C31.9456 57.1456 37.1104 50.1664 43.6384 43.6352C50.1664 37.1072 57.1488 31.9456 64.0032 28.192C70.8608 31.9424 77.8368 37.1072 84.3648 43.6352C90.896 50.1632 96.0608 57.1456 99.8111 64.0032C96.0608 70.8576 90.8992 77.8368 84.368 84.3648C77.84 90.8928 70.8608 96.0576 64.0032 99.8112ZM104.579 74.7072C100.683 80.6367 96.1855 86.1485 91.1584 91.1552C86.1517 96.1823 80.6398 100.68 74.7104 104.576C76.208 105.088 77.6832 105.526 79.1296 105.888C90.4928 108.726 98.2912 106.643 102.467 102.464C106.646 98.2912 108.73 90.4928 105.888 79.1296C105.526 77.6832 105.091 76.2048 104.579 74.7072ZM110.576 64.0032C113.322 58.1664 115.184 52.3744 116.112 46.88C117.923 52.406 118.842 58.185 118.835 64C118.835 69.9808 117.878 75.7376 116.109 81.1264C115.181 75.632 113.318 69.8432 110.576 64.0064V64.0032ZM81.136 11.8944C75.6384 12.8192 69.8432 14.6848 64.0032 17.4304C58.1632 14.6848 52.368 12.816 46.8704 11.8944C52.3989 10.0796 58.1812 9.15711 64 9.16165C69.984 9.16165 75.744 10.1216 81.1328 11.8912L81.136 11.8944ZM108.986 18.4768C97.0182 6.61975 80.8466 -0.0223562 64 5.65372e-05C28.6528 5.65372e-05 0 28.6528 0 64C0 99.3472 28.6528 128 64 128C72.4588 128.011 80.8355 126.34 88.6425 123.084C96.4496 119.828 103.531 115.052 109.475 109.034C121.361 97.062 128.022 80.87 128 64C128.011 55.5297 126.336 47.1419 123.071 39.326C119.807 31.5101 115.018 24.4225 108.986 18.4768ZM53.2992 23.4272C51.8016 22.9152 50.3232 22.4768 48.8736 22.1152C37.5104 19.2736 29.712 21.3568 25.536 25.5328C21.3568 29.712 19.2736 37.5104 22.112 48.8736C22.4768 50.32 22.912 51.7984 23.4272 53.2992C27.3244 47.3696 31.8229 41.8577 36.8512 36.8512C41.8577 31.8229 47.3695 27.3244 53.2992 23.4272ZM104.579 53.2992C100.682 47.3686 96.1835 41.8557 91.1552 36.848C86.1484 31.8209 80.6366 27.3235 74.7072 23.4272C76.208 22.9152 77.6832 22.4768 79.1328 22.1152C90.4928 19.2736 98.2943 21.3568 102.47 25.536C106.646 29.712 108.733 37.5104 105.891 48.8736C105.53 50.3232 105.091 51.7984 104.579 53.2992Z"
+        fill="currentColor"
+      />
+    </svg>
   )
 }

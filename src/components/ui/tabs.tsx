@@ -10,8 +10,8 @@ interface Tab {
 }
 
 const _tabs: Tab[] = [
-  { name: 'My Agenda', href: '#', icon: CalendarCheck, current: true },
   { name: 'Tasks', href: '#', icon: ClipboardText, current: false },
+  { name: 'Week 19', href: '#', icon: CalendarCheck, current: true },
 ]
 
 export default function Tabs({ tabs = _tabs }: { tabs?: Tab[] }) {
@@ -42,9 +42,9 @@ export default function Tabs({ tabs = _tabs }: { tabs?: Tab[] }) {
               aria-current={tab.current ? 'page' : undefined}
               className={cx(
                 tab.current ?
-                  'bg-secondary text-cnt-primary'
+                  'bg-secondary dark:bg-gray-6 text-cnt-primary'
                 : 'text-cnt-tertiary hover:text-cnt-secondary font-semibold',
-                'h-8 inline-flex items-center gap-x-2  rounded-lg px-3 py-1 text-sm/6 font-medium'
+                'h-8 inline-flex items-center gap-x-2  rounded-lg px-2 py-1 text-sm/6 font-medium'
               )}
             >
               <tab.icon size={20} />

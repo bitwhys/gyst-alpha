@@ -146,10 +146,15 @@
   --color-cnt-on-primary: var(--cnt-on-primary);
 
   --color-cnt-accent: var(--cnt-accent);
+  --color-cnt-accent-bold: var(--cnt-accent-bold);
   --color-cnt-info: var(--cnt-info);
+  --color-cnt-info-bold: var(--cnt-info-bold);
   --color-cnt-success: var(--cnt-success);
+  --color-cnt-success-bold: var(--cnt-success-bold);
   --color-cnt-warning: var(--cnt-warning);
+  --color-cnt-warning-bold: var(--cnt-warning-bold);
   --color-cnt-danger: var(--cnt-danger);
+  --color-cnt-danger-bold: var(--cnt-danger-bold);
 
   /* Backgrounds */
   --color-main: var(--bg-main);

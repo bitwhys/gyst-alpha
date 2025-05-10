@@ -42,3 +42,24 @@
 @import '@radix-ui/colors/red-alpha.css';
 @import '@radix-ui/colors/red-dark.css';
 @import '@radix-ui/colors/red-dark-alpha.css';
+
+/* For Charts */
+@import '@radix-ui/colors/blue.css';
+@import '@radix-ui/colors/blue-alpha.css';
+@import '@radix-ui/colors/blue-dark.css';
+@import '@radix-ui/colors/blue-dark-alpha.css';
+
+@import '@radix-ui/colors/pink.css';
+@import '@radix-ui/colors/pink-alpha.css';
+@import '@radix-ui/colors/pink-dark.css';
+@import '@radix-ui/colors/pink-dark-alpha.css';
+
+@import '@radix-ui/colors/jade.css';
+@import '@radix-ui/colors/jade-alpha.css';
+@import '@radix-ui/colors/jade-dark.css';
+@import '@radix-ui/colors/jade-dark-alpha.css';
+
+@import '@radix-ui/colors/lime.css';
+@import '@radix-ui/colors/lime-alpha.css';
+@import '@radix-ui/colors/lime-dark.css';
+@import '@radix-ui/colors/lime-dark-alpha.css';

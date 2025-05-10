@@ -5,14 +5,29 @@ import { Button } from './components/ui/button'
 import { Timer } from '@phosphor-icons/react'
 import { Checkbox } from './components/ui/checkbox'
 import { cx } from './lib/utils'
+import { EmptyState } from './components/emty-state'
 
 const items = [
-  { id: 1, size: 'sm' as const },
-  { id: 2, size: 'md' as const },
-  { id: 3, size: 'lg' as const },
-  { id: 4, size: 'sm' as const },
-  { id: 5, size: 'md' as const },
-  // More items...
+  // { id: 1, size: 'sm' as const },
+  // { id: 2, size: 'md' as const },
+  // { id: 3, size: 'lg' as const },
+  // { id: 4, size: 'sm' as const },
+  // { id: 5, size: 'md' as const },
+  // { id: 6, size: 'sm' as const },
+  // { id: 7, size: 'md' as const },
+  // { id: 8, size: 'lg' as const },
+  // { id: 9, size: 'sm' as const },
+  // { id: 10, size: 'md' as const },
+  // { id: 11, size: 'sm' as const },
+  // { id: 12, size: 'md' as const },
+  // { id: 13, size: 'lg' as const },
+  // { id: 14, size: 'sm' as const },
+  // { id: 15, size: 'md' as const },
+  // { id: 16, size: 'sm' as const },
+  // { id: 17, size: 'md' as const },
+  // { id: 18, size: 'lg' as const },
+  // { id: 19, size: 'sm' as const },
+  // { id: 20, size: 'md' as const },
 ]
 
 function App() {
@@ -27,7 +42,7 @@ function App() {
 
           <div className="space-y-2">
             <div className="pb-5 sm:flex sm:items-center sm:justify-between">
-              <h3 className="text-base font-semibold">Job Postings</h3>
+              <h3 className="text-base font-semibold">Sessions</h3>
               <div className="mt-3 sm:mt-0 sm:ml-4">
                 <Button
                   type="button"
@@ -39,13 +54,16 @@ function App() {
                 </Button>
               </div>
             </div>
-            <ul role="list" className="space-y-4">
-              {items.map(item => (
-                <li key={item.id}>
-                  <Session size={item.size} />
-                </li>
-              ))}
-            </ul>
+            {items.length === 0 ?
+              <EmptyState />
+            : <ul role="list" className="space-y-4">
+                {items.map(item => (
+                  <li key={item.id}>
+                    <Session size={item.size} />
+                  </li>
+                ))}
+              </ul>
+            }
           </div>
         </div>
       </div>
@@ -102,18 +120,18 @@ function WeekDays() {
       <div className="grid grid-cols-7 gap-x-4">
         <div className="flex flex-col justify-center gap-y-2">
           <div className="text-base/6 font-semibold text-center">M</div>
-          <div className="relative flex h-14 items-center justify-center rounded-xl bg-accent-soft px-6 py-3 text-xl font-semibold text-cnt-accent">
-            30
-            <span className="absolute right-1 top-1 flex items-center justify-center size-5">
+          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary">
+            5
+            <span className="hidden absolute right-1 top-1 flex items-center justify-center size-5">
               <Check size={16} weight="bold" />
             </span>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-2">
           <div className="text-base/6 font-semibold text-center">T</div>
-          <div className="relative flex h-14 items-center justify-center rounded-xl bg-accent-6 px-6 py-3 text-xl font-semibold text-cnt-accent">
-            1
-            <span className="absolute right-1 top-1 flex items-center justify-center size-5">
+          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary">
+            6
+            <span className="hidden absolute right-1 top-1 flex items-center justify-center size-5">
               <Checks size={16} weight="bold" />
             </span>
           </div>
@@ -121,35 +139,36 @@ function WeekDays() {
         <div className="flex flex-col justify-center gap-y-2">
           <span className="text-base/6 font-semibold text-center">W</span>
           <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary outline-2 outline-offset-2 outline-transparent">
-            2
+            7
             <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-2">
           <span className="text-base/6 font-semibold text-center">T</span>
-          <div className="relative flex h-14 items-center justify-center rounded-xl bg-primary px-6 py-3 text-xl font-semibold text-cnt-on-primary outline-2 outline-offset-2 outline-primary">
-            3
+          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary">
+            8
             <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-2">
           <span className="text-base/6 font-semibold text-center">F</span>
-          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary">
-            4
+          <div className="relative flex h-14 items-center justify-center rounded-xl bg-primary px-6 py-3 text-xl font-semibold text-cnt-on-primary outline-2 outline-offset-2 outline-primary">
+            9
+            <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center gap-y-2">
+          <span className="text-base/6 font-semibold text-center">S</span>
+          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary outline-2 outline-offset-2 outline-transparent">
+            10
             <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-2">
           <span className="text-base/6 font-semibold text-center">S</span>
           <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary outline-2 outline-offset-2 outline-transparent">
-            5
-            <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
-          </div>
-        </div>
-        <div className="flex flex-col justify-center gap-y-2">
-          <span className="text-base/6 font-semibold text-center">S</span>
-          <div className="relative flex h-14 items-center justify-center rounded-xl bg-secondary px-6 py-3 text-xl font-semibold text-cnt-secondary outline-2 outline-offset-2 outline-transparent">
-            6
+            11
             <span className="absolute right-1 top-1 block hidden size-4 rounded-full border border-emerald-500/40 bg-emerald-200"></span>
           </div>
         </div>

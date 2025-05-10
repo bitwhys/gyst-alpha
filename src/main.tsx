@@ -7,7 +7,7 @@ import { ThemeProvider } from './components/ui/theme-provider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="light" storageKey="with-story-ui-theme">
+    <ThemeProvider defaultTheme="system" storageKey="with-story-ui-theme">
       <App />
     </ThemeProvider>
   </StrictMode>

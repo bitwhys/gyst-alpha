@@ -15,17 +15,17 @@ export default function ThemeToggle() {
 
   return (
     <div>
-      <div className="relative inline-grid h-8 grid-cols-[1fr_1fr] items-center text-sm font-medium text-cnt-secondary">
+      <div className="relative inline-grid h-8 grid-cols-[1fr_1fr] items-center text-sm font-medium text-cnt-primary">
         <Switch
           id={id}
           checked={theme === 'dark'}
           onCheckedChange={handleThemeChange}
           className="peer data-[state=checked]:bg-secondary data-[state=unchecked]:bg-secondary absolute inset-0 h-[inherit] w-auto [&_span]:h-full [&_span]:w-1/2 [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full"
         />
-        <span className="peer-data-[state=checked]:text-cnt-primary pointer-events-none relative ms-0.5 flex min-w-8 items-center justify-center text-center">
+        <span className="peer-data-[state=checked]:text-cnt-secondary dark:peer-data-[state=checked]:text-cnt-tertiary pointer-events-none relative ms-0.5 flex min-w-8 items-center justify-center text-center">
           <Moon size={16} weight="bold" />
         </span>
-        <span className="peer-data-[state=unchecked]:text-cnt-primary pointer-events-none relative me-0.5 flex min-w-8 items-center justify-center text-center">
+        <span className="peer-data-[state=unchecked]:text-gray-9 dark:peer-data-[state=checked]:text-gray-2 pointer-events-none relative me-0.5 flex min-w-8 items-center justify-center text-center">
           <Sun size={16} weight="bold" />
         </span>
       </div>
